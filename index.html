@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Steam и Epic Games — гид и сравнение</title>
+<style>
+:root{--bg:#eceef5;--pan:#fff;--pan2:#e3e6f0;--ink:#161828;--mut:#5d6380;--line:#d3d7e6;--ac:#5b3df5;--cy:#0a8fb8;--steam:#1488b8;--ok:#0f9a62;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0c14;--pan:#141626;--pan2:#1d2036;--ink:#eef0fb;--mut:#9a9fbd;--line:#272a44;--ac:#8d78ff;--cy:#3fd0f0;--steam:#4ec0ec;--ok:#3ddc97}}
+:root[data-theme="dark"]{--bg:#0b0c14;--pan:#141626;--pan2:#1d2036;--ink:#eef0fb;--mut:#9a9fbd;--line:#272a44;--ac:#8d78ff;--cy:#3fd0f0;--steam:#4ec0ec;--ok:#3ddc97}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Segoe UI",system-ui,Arial,sans-serif;display:flex;min-height:100vh}
+h1,h2,h3,.logo,.big{font-family:Bahnschrift,"Arial Narrow","Segoe UI",sans-serif}
+button{font:inherit;color:inherit;cursor:pointer}
+aside{position:sticky;top:0;align-self:flex-start;height:100vh;width:220px;flex:0 0 220px;background:var(--pan);border-right:1px solid var(--line);padding:24px 14px;display:flex;flex-direction:column;gap:4px;overflow-y:auto}
+.logo{font-size:26px;font-weight:800;padding:0 12px 18px;color:var(--ink);text-decoration:none;letter-spacing:1px}
+aside a.n{color:var(--mut);text-decoration:none;padding:10px 12px;border-radius:8px;font-size:15px;border-left:3px solid transparent}
+aside a.n:hover,aside a.n.on{background:var(--pan2);color:var(--ink)}
+aside a.n.on{border-left-color:var(--ac);font-weight:600}
+#th{margin-top:auto;background:var(--pan2);border:1px solid var(--line);border-radius:8px;padding:8px}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+main{flex:1;min-width:0;padding:32px 4vw 60px;max-width:1020px}
+section{padding:34px 0;scroll-margin-top:10px}
+h2{font-size:30px;margin:0 0 6px}.lead{color:var(--mut);margin:0 0 20px;max-width:62ch}
+.hero{border-radius:16px;padding:48px 36px;background:linear-gradient(135deg,#2a1b8f,#5b3df5 55%,#1ab0d8);color:#fff}
+.hero small{opacity:.8}.hero h1{font-size:clamp(56px,13vw,120px);line-height:.95;margin:6px 0 14px;letter-spacing:2px}
+.hero p{max-width:52ch;margin:0 0 20px;font-size:18px;opacity:.92}
+.btn{display:inline-block;background:#fff;color:#1c1470;border-radius:8px;padding:12px 24px;font-weight:700;text-decoration:none;border:0}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.tile{background:var(--pan);border:1px solid var(--line);border-radius:12px;padding:18px}
+.tile h3{margin:0 0 4px;font-size:18px}.tile p{margin:0;color:var(--mut);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{background:var(--pan);border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:14px}
+.chip:hover{border-color:var(--ac)}.chip.on{background:var(--ac);border-color:var(--ac);color:#fff;font-weight:600}
+.panel{background:var(--pan);border:1px solid var(--line);border-left:4px solid var(--ac);border-radius:12px;padding:20px 22px}
+.panel h3{margin:0 0 6px;font-size:22px}.panel .y{color:var(--cy);font-weight:700}.panel p{margin:6px 0;color:var(--mut)}
+.nav2{display:flex;gap:8px;margin-top:12px}.nav2 button{background:var(--pan2);border:1px solid var(--line);border-radius:8px;padding:6px 14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin-bottom:14px}
+.g{background:var(--pan);border:1px solid var(--line);border-radius:12px;padding:16px;text-align:left;min-height:110px;display:flex;flex-direction:column;justify-content:space-between}
+.g:hover{border-color:var(--ac);transform:translateY(-2px)}.g.on{border-color:var(--ac);box-shadow:0 0 0 2px var(--ac)}
+.g b{font-size:17px}.g span{color:var(--cy);font-size:13px;font-weight:600}
+.vs{background:var(--pan);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.vh,.vr{display:grid;grid-template-columns:1fr 130px 1fr}
+.vh div{padding:16px;font-family:Bahnschrift,"Arial Narrow",sans-serif;font-size:22px;font-weight:700;text-align:center}
+.vh .s{background:var(--steam);color:#04202c}.vh .e{background:var(--ac);color:#fff}.vh .m{background:var(--pan2)}
+.vr>div{padding:12px 14px;text-align:center;border-top:1px solid var(--line)}
+.vr .m{background:var(--pan2);color:var(--mut);font-size:13px;display:flex;align-items:center;justify-content:center}
+.vr .w{color:var(--ok);font-weight:700}.vr .w::before{content:"✓ "}
+.calc{margin-top:28px}.calc h3{margin:0 0 8px}
+.calc input[type=range]{width:100%;accent-color:var(--ac)}
+.mt{display:flex;height:32px;border-radius:8px;overflow:hidden;font-size:13px;font-weight:700;margin:8px 0}
+.mt div{display:flex;align-items:center;padding:0 10px;white-space:nowrap;transition:width .3s}
+.mt .s{background:var(--steam);color:#04202c}.mt .e{background:var(--ac);color:#fff}
+.q p{font-weight:600;margin:12px 0 6px}.q .chips{margin:0}
+.res{margin-top:14px;font-weight:600}
+.note{color:var(--mut);font-size:13px;margin-top:12px}
+details{background:var(--pan);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:8px}
+summary{cursor:pointer;font-weight:600}details p{margin:8px 0 0;color:var(--mut)}
+footer{margin-top:30px;padding-top:20px;border-top:1px solid var(--line);color:var(--mut);font-size:13px}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:12px}
+.strip div{background:var(--pan);border:1px solid var(--line);border-radius:12px;padding:18px;border-top:3px solid var(--ac)}
+.strip a{display:block;background:var(--pan);border:1px solid var(--line);border-radius:12px;padding:18px;border-top:3px solid var(--ac);color:inherit;text-decoration:none}.strip a:hover{border-color:var(--ac)}
+.strip .big{display:block;font-size:42px;line-height:1.1;color:var(--ac)}.strip span:not(.big){color:var(--mut);font-size:14px}
+.kb h3.sub{font-size:22px;margin:30px 0 4px}.kb .panel{margin-top:2px}
+.tile ul{margin:8px 0 0;padding-left:20px;color:var(--mut)}
+@media(max-width:820px){
+body{display:block}
+aside{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;height:auto;width:auto;flex-direction:row;align-items:center;gap:2px;padding:8px 10px;border-right:0;border-bottom:1px solid var(--line);overflow-x:auto;overflow-y:hidden}
+.logo{padding:0 10px 0 4px;font-size:20px}aside a.n{white-space:nowrap;padding:8px 10px;border-left:0;border-bottom:3px solid transparent}
+aside a.n.on{border-bottom-color:var(--ac)}#th{margin:0 0 0 auto;white-space:nowrap}
+section{scroll-margin-top:60px}.hero{padding:32px 22px}
+.vh,.vr{grid-template-columns:1fr 1fr}.vh .m{display:none}
+.vr .m{grid-column:1/-1;order:-1;padding:6px;border-top:1px solid var(--line)}.vr>div:not(.m){border-top:0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.g:hover{transform:none}.mt div{transition:none}}
+</style>
+</head>
+<body>
+<aside>
+<a class="logo" href="#top">S × E</a>
+<a class="n on" href="#top">Главная</a><a class="n" href="#steam">Steam</a><a class="n" href="#epic">Epic Games</a><a class="n" href="#compare">Сравнение</a><a class="n" href="#faq">Вопросы</a><a class="n" href="#quiz">Подбор</a>
+<button id="th" type="button">🌓 Тема</button>
+</aside>
+<main>
+<section id="top" style="padding-top:0">
+<div class="hero"><small>Краткий разбор</small><h1 style="font-size:clamp(40px,8vw,76px)">Steam или Epic?</h1>
+<p>Этот сайт сравнивает две главные площадки для ПК-игр: Steam от Valve и Epic Games Store. Сначала рассказываем про каждую, затем сравниваем, что по чём, а в конце тест подскажет, какая подходит вам.</p>
+<a class="btn" href="#steam">Начать со Steam</a></div>
+<div class="strip"><a href="#steam"><span class="big">1</span><span>Steam: что внутри и почему он популярен</span></a><a href="#epic"><span class="big">2</span><span>Epic Games: компания, игры и магазин</span></a><a href="#compare"><span class="big">3</span><span>Сравнение: что по чём</span></a><a href="#quiz"><span class="big">4</span><span>Тест: какая площадка вам подойдёт</span></a></div>
+</section>
+
+<section id="steam"><h2>Steam</h2>
+<p class="lead">Крупнейшая в мире цифровая платформа для ПК-игр от Valve. Магазин, библиотека и сообщество в одном клиенте.</p>
+<div class="tiles">
+<div class="tile"><h3>🏢 Кто за ним стоит</h3><p>Valve Corporation, основанная в 1996 году. Платформа запущена в 2003 году.</p></div>
+<div class="tile"><h3>👥 Масштаб</h3><p>Более 130 млн активных пользователей и более 60 000 игр в каталоге.</p></div>
+<div class="tile"><h3>🎮 Свои хиты</h3><p>Dota 2, CS2, Half-Life и Portal. Многие из них запускаются через Steam.</p></div>
+<div class="tile"><h3>🖥️ Железо</h3><p>Портативная консоль Steam Deck и VR-шлем Valve Index.</p></div>
+</div>
+<h3 style="font-size:22px;margin:28px 0 4px">Почему Steam так популярен</h3><div class="chips" id="swc"></div><div class="panel" id="swp" aria-live="polite"></div>
+</section>
+<section id="steam-h"><h2>История Steam</h2><div class="chips" id="shc"></div><div class="panel" id="shp" aria-live="polite"></div></section>
+<section id="steam-f"><h2>Что есть внутри Steam</h2><div class="chips" id="sfc"></div><div class="panel" id="sfp" aria-live="polite"></div>
+<div class="calc tile" style="margin-top:20px"><h3>Калькулятор скидки</h3><p>Распродажи Steam проходят несколько раз в год. Посмотрите, сколько стоит игра со скидкой.</p>
+<p style="margin:10px 0 0"><label for="sdp">Цена: <b id="sdl"></b></label></p><input id="sdp" type="range" min="5" max="70" value="30" step="1" style="width:100%;accent-color:var(--ac)">
+<p style="margin:10px 0 0"><label for="sdd">Скидка: <b id="sdl2"></b></label></p><input id="sdd" type="range" min="0" max="90" value="50" step="5" style="width:100%;accent-color:var(--ac)">
+<p id="sdr" style="color:var(--ink);font-weight:600"></p></div></section>
+
+<section id="epic"><h2>Теперь Epic Games</h2>
+<p class="lead">Компания-разработчик и магазин, который с 2018 года стал главным соперником Steam. Разберём то же самое: кто это, чем интересен, что внутри.</p></section>
+<section id="about"><h2>О компании</h2>
+<p class="lead">Американская компания-разработчик и издатель игр, создатель Unreal Engine и оператор магазина Epic Games Store.</p>
+<div class="tiles">
+<div class="tile"><h3>🏢 Основание</h3><p>В 1991 году Тимом Суини, который остаётся главой компании. Штаб-квартира в Кэри, Северная Каролина.</p></div>
+<div class="tile"><h3>⚙️ Технологии</h3><p>Unreal Engine лежит в основе тысяч игр, а также кино, телевидения и архитектурной визуализации.</p></div>
+<div class="tile"><h3>🎯 Философия</h3><p>Открытая экосистема, выгодные условия для разработчиков, доступные технологии.</p></div>
+<div class="tile"><h3>🧩 Сервисы</h3><p>Epic Online Services, Quixel Megascans, Sketchfab и MetaHuman для создателей игр и контента.</p></div>
+</div></section>
+
+<section id="history"><h2>История</h2>
+<p class="lead">Нажмите на год, чтобы прочитать подробности.</p>
+<div class="chips" id="hc"></div><div class="panel" id="hp" aria-live="polite"></div>
+<div class="nav2"><button type="button" id="hprev">← Раньше</button><button type="button" id="hnext">Позже →</button></div>
+</section>
+
+<section id="games"><h2>Самые популярные игры Epic</h2>
+<p class="lead">Нажмите на плитку, чтобы прочитать подробности.</p>
+<div class="grid" id="gg"></div><div class="panel" id="gp" aria-live="polite"></div>
+</section>
+
+<section id="kb" class="kb"><h2>Fortnite, движок и суды</h2>
+<p class="lead">Три темы, которые отличают Epic от любой другой игровой компании. Нажимайте на вкладки.</p>
+<h3 class="sub">Fortnite</h3><div class="chips" id="fc"></div><div class="panel" id="fp" aria-live="polite"></div>
+<h3 class="sub">Unreal Engine: где его используют</h3><div class="chips" id="uc"></div><div class="panel" id="up" aria-live="polite"></div>
+<h3 class="sub">Споры с Apple и Google</h3><div class="chips" id="lc"></div><div class="panel" id="lp" aria-live="polite"></div>
+</section>
+
+<section id="store"><h2>Epic Games Store</h2>
+<p class="lead">Магазин для ПК, запущенный в декабре 2018 года. Главный конкурент Steam. Нажмите на вкладку.</p>
+<div class="chips" id="sc"></div><div class="panel" id="sp" aria-live="polite"></div>
+<div class="calc tile" style="margin-top:20px"><h3>Сколько стоят бесплатные игры Epic</h3><p>Прикиньте, на какую сумму вы наберёте игр за год, если будете забирать раздачи.</p>
+<p style="margin:10px 0 0"><label for="efp">Средняя цена игры: <b id="efl"></b></label></p><input id="efp" type="range" min="5" max="30" value="15" step="1" style="width:100%;accent-color:var(--ac)">
+<p style="margin:10px 0 0"><label for="efn">Игр в месяц: <b id="efl2"></b></label></p><input id="efn" type="range" min="1" max="8" value="4" step="1" style="width:100%;accent-color:var(--ac)">
+<p id="efr" style="color:var(--ink);font-weight:600"></p></div></section>
+
+<section id="compare"><h2>Сравнение: что по чём</h2>
+<p class="lead">Steam больше и старше, Epic выигрывает условиями для авторов и раздачами. Галочка отмечает сильную сторону.</p>
+<div class="tiles" style="margin-bottom:16px"><div class="tile" style="border-top:4px solid var(--steam)"><h3>Steam</h3><ul><li>Запущен Valve в 2003 году</li><li>Крупнейший каталог для ПК</li><li>Отзывы, мастерская, форумы</li><li>Комиссия 30%, 25% и 20% по ступеням</li><li>Своё железо: Steam Deck и Valve Index</li></ul></div>
+<div class="tile" style="border-top:4px solid var(--ac)"><h3>Epic Games Store</h3><ul><li>Запущен в декабре 2018 года</li><li>Комиссия 12%</li><li>Бесплатные игры каждую неделю</li><li>Epic Online Services для разработчиков</li><li>Код автора для поддержки блогеров</li></ul></div></div>
+<div class="chips" id="cc"></div>
+<div class="vs"><div class="vh"><div class="s">Steam</div><div class="m"></div><div class="e">Epic</div></div><div id="cr"></div></div>
+
+<div class="calc tile"><h3>Калькулятор комиссии</h3>
+<p>Сколько разработчик оставит себе с продаж одной игры. Steam берёт 30% до $10 млн, 25% с $10 до $50 млн и 20% выше. Epic берёт 12%.</p>
+<p style="margin:10px 0 0"><label for="rv">Выручка: <b id="rl"></b></label></p>
+<input id="rv" type="range" min="0" max="100" value="40" step="1">
+<div class="mt"><div class="s" id="bs"></div></div><div class="mt"><div class="e" id="be"></div></div>
+<p id="rd" style="color:var(--ink);font-weight:600"></p></div>
+
+
+<p class="note">Числа приблизительные и могут меняться. Проверьте актуальные условия на сайтах площадок. Многие игроки пользуются обеими.</p>
+</section>
+
+<section id="faq"><h2>Частые вопросы</h2>
+<details><summary>Игры из раздач Epic остаются навсегда?</summary><p>Да, если нажать «Получить» до конца раздачи, игра остаётся в библиотеке аккаунта.</p></details>
+<details><summary>Чем Unreal Engine связан с магазином?</summary><p>Разработчики не платят роялти Unreal Engine с продаж через Epic Games Store. Эти условия делают магазин привлекательным для авторов на этом движке.</p></details>
+<details><summary>Что такое эксклюзивность в Epic?</summary><p>Игра выходит на ПК только в Epic Games Store на ограниченный срок, затем может появиться в других магазинах. Практика вызывала споры среди игроков.</p></details>
+<details><summary>Можно пользоваться обеими площадками?</summary><p>Да. Библиотеки не пересекаются, но игры можно покупать там, где выгоднее или где вышел эксклюзив.</p></details>
+<details><summary>Почему Steam берёт больше?</summary><p>Steam сильнее в сообществе, отзывах, Мастерской и охвате аудитории. Epic делает ставку на низкую комиссию и раздачи.</p></details>
+<details><summary>Что такое Steam Direct?</summary><p>Это способ публикации игры в Steam: разработчик платит взнос $100 за каждую игру и проходит проверку.</p></details>
+<details><summary>Какая площадка лучше для маленькой студии?</summary><p>Зависит от цели. Steam даёт большую аудиторию и отзывы, Epic оставляет больше выручки из-за комиссии 12%. Многие студии выпускают игру в обоих магазинах.</p></details>
+</section>
+
+<section id="quiz"><h2>Какая площадка вам подойдёт?</h2>
+<p class="lead">Восемь вопросов. Отвечайте честно, и в конце увидите, к какой площадке вы ближе.</p>
+<div class="tile q"><div id="qz"></div><div id="qb"></div><div class="res" id="qr" aria-live="polite"></div></div></section>
+<footer>Учебный проект об Epic Games и сравнении игровых площадок. Права на игры и торговые марки принадлежат их владельцам.</footer>
+</main>
+<script>
+var $=function(s){return document.querySelector(s)};
+function chips(el,list,cur,fn){el.innerHTML=list.map(function(t,i){return '<button type="button" class="chip'+(i===cur?' on':'')+'" data-i="'+i+'">'+t+'</button>'}).join('');
+[].forEach.call(el.children,function(b){b.onclick=function(){fn(+b.dataset.i)}})}
+var H=[["1991","Epic MegaGames","Тим Суини основывает компанию, которая начинает с shareware-игр для ПК.","Название Epic MegaGames компания носила в 1990-х, позже сократила до Epic Games."],
+["1994","Jazz Jackrabbit","Платформер про кролика Джаззи становится одним из первых хитов Epic.","Игра показала, что студия умеет делать динамичные ПК-хиты."],
+["1998","Unreal","Шутер и первая версия Unreal Engine задают новую планку графики.","Движок сразу начал лицензироваться другим студиям и дал компании главный источник роста."],
+["1999","Unreal Tournament","Сетевой арена-шутер конкурирует с Quake III Arena.","Игра закрепила за Epic репутацию создателя мультиплеерных шутеров."],
+["2006","Gears of War","Хит для Xbox 360 показывает возможности Unreal Engine 3.","Серия стала одной из главных эксклюзивных франшиз Xbox."],
+["2017","Fortnite","Режим «Королевская битва» превращает игру в мировой феномен.","Fortnite выросла в платформу с концертами, событиями и собственным редактором островов."],
+["2018","Epic Games Store","Запуск магазина с комиссией 12% и бесплатными играми каждую неделю.","Магазин стал первым серьёзным соперником Steam на ПК за много лет."],
+["2019","Psyonix и Rocket League","Epic покупает студию Psyonix, создателя Rocket League.","Позже игру сделали бесплатной."],
+["2020","Суд с Apple и Google","Epic оспаривает правила магазинов приложений после конфликта вокруг оплаты в Fortnite.","Спор повлиял на обсуждение комиссий и правил мобильных магазинов во всём мире."],
+["2022","Unreal Engine 5","Технологии Nanite и Lumen приближают игры к кинематографической картинке.","Движок активно используют не только в играх, но и в кино и телевидении."]];
+var hi=5;
+function showH(i){hi=i;chips($("#hc"),H.map(function(h){return h[0]}),i,showH);var h=H[i];
+$("#hp").innerHTML='<span class="y">'+h[0]+'</span><h3>'+h[1]+'</h3><p>'+h[2]+'</p><p>'+h[3]+'</p>'}
+$("#hprev").onclick=function(){showH(Math.max(0,hi-1))};$("#hnext").onclick=function(){showH(Math.min(H.length-1,hi+1))};showH(5);
+
+var G=[["Fortnite","2017","Игра","Королевская битва, строительство, творческий режим и концерты внутри игры. Главный хит компании и одна из самых популярных игр в мире."],
+["Rocket League","2015","Игра","Футбол на машинах от студии Psyonix, которую Epic купила в 2019 году. Игра стала бесплатной и собирает огромную аудиторию."],
+["Fall Guys","2020","Игра","Весёлая королевская битва с забавными героями-фасолинками от студии Mediatonic. Позже перешла под крыло Epic и стала бесплатной."],
+["Gears of War","2006","Игра","Кооперативный шутер от третьего лица с системой укрытий. Одна из самых известных франшиз, созданных Epic."]];
+var gf=0,gs=0,GF=["Все","Игры","Технологии"];
+function showG(){
+var l=G.map(function(g,i){return[g,i]}).filter(function(x){return gf==0||x[0][2]==GF[gf]});
+$("#gg").innerHTML=l.map(function(x){return '<button type="button" class="g'+(x[1]==gs?' on':'')+'" data-i="'+x[1]+'"><b>'+x[0][0]+'</b><span>'+x[0][1]+' · '+x[0][2]+'</span></button>'}).join('');
+[].forEach.call($("#gg").children,function(b){b.onclick=function(){gs=+b.dataset.i;showG()}});
+var g=G[gs];$("#gp").innerHTML=g?'<span class="y">'+g[1]+'</span><h3>'+g[0]+'</h3><p>'+g[3]+'</p>':'<p>Выберите плитку, чтобы увидеть описание.</p>'}
+showG();
+
+var S=[["🎁 Бесплатные игры","Каждую неделю одна или несколько игр отдаются навсегда. Раздачи с декабря 2018 года сделали магазин заметным среди игроков."],
+["💸 Комиссия 12%","Намного ниже стандартных 30% у Steam. Это главный аргумент Epic для разработчиков."],
+["🎟️ Эксклюзивы","Часть игр выходит только в Epic Games Store на определённый срок. Иногда это финансирует разработку."],
+["🛠️ Движок","Роялти Unreal Engine не берутся с продаж через магазин Epic."],
+["🧑‍🎨 Код автора","Игроки могут указать код автора при покупке, и часть дохода достаётся создателю контента."]];
+var si=0;function showS(i){si=i;chips($("#sc"),S.map(function(s){return s[0]}),i,showS);$("#sp").innerHTML='<h3>'+S[i][0]+'</h3><p>'+S[i][1]+'</p>'}showS(0);
+
+var C=[["Для игроков",[["Запуск","2003","2018",""],["Каталог","Более 60 000 игр","Несколько тысяч","s"],["Бесплатные игры","Редкие акции","Каждую неделю","e"],["Сообщество","Отзывы, форумы, Мастерская","Базовые функции","s"],["Эксклюзивы","Почти нет","Временные",""]]],
+["Для разработчиков",[["Комиссия","30%, ниже при больших продажах","12%","e"],["Взнос за игру","$100 (Steam Direct)","Нет","e"],["Инструменты","Steamworks","Epic Online Services",""],["Роялти Unreal Engine","Взимаются","Не взимаются с продаж в Epic","e"],["Аудитория","Крупнее","Меньше","s"]]],
+["Экосистема",[["Железо","Steam Deck, Valve Index","Нет","s"],["Свои хиты","Dota 2, CS2, Half-Life","Fortnite, Rocket League",""],["Технологии","SteamOS","Unreal Engine, MetaHuman","e"],["Киберспорт","The International, CS Major","Турниры Fortnite","s"]]],
+["Функции",[["Облачные сохранения","Steam Cloud","Есть, у части игр","" ],["Достижения","Есть","Есть",""],["Моды и мастерская","Steam Workshop","Нет единого аналога","s"],["Совместная игра","Remote Play Together","Нет аналога","s"],["Торговая площадка","Steam Community Market","Нет","s"],["Linux","SteamOS и Proton","Нет официального клиента","s"]]],
+["Цены и скидки",[["Распродажи","Крупные сезонные распродажи","Распродажи с купонами на скидку","e"],["Бесплатные игры","Редкие пробные периоды","Раздача каждую неделю","e"],["Возврат","14 дней, до 2 часов игры","Похожие правила, проверьте условия",""],["Региональные цены","Есть","Есть",""]]]];
+var ci=0;function showC(i){ci=i;chips($("#cc"),C.map(function(c){return c[0]}),i,showC);
+$("#cr").innerHTML=C[i][1].map(function(r){return '<div class="vr"><div'+(r[3]=="s"?' class="w"':'')+'>'+r[1]+'</div><div class="m">'+r[0]+'</div><div'+(r[3]=="e"?' class="w"':'')+'>'+r[2]+'</div></div>'}).join('')}showC(3);
+
+function steamCut(m){var c=Math.min(m,10)*.3;if(m>10)c+=(Math.min(m,50)-10)*.25;if(m>50)c+=(m-50)*.2;return c}
+function calc(){var m=+$("#rv").value;if(m<1)m=1;var s=steamCut(m),e=m*.12,max=Math.max(m,1);
+$("#rl").textContent="$"+m+" млн";
+$("#bs").style.width=Math.max(8,(m-s)/m*100)+"%";$("#bs").textContent="Steam: остаётся $"+(m-s).toFixed(1)+" млн";
+$("#be").style.width=Math.max(8,(m-e)/m*100)+"%";$("#be").textContent="Epic: остаётся $"+(m-e).toFixed(1)+" млн";
+$("#rd").textContent="Разница в пользу Epic: $"+(s-e).toFixed(1)+" млн (расчёт упрощённый, без налогов и других сборов)."}
+$("#rv").oninput=calc;calc();
+
+
+function tabs(c,p,D){var f=function(i){chips($(c),D.map(function(d){return d[0]}),i,f);$(p).innerHTML='<h3>'+D[i][0]+'</h3><p>'+D[i][1]+'</p><p>'+D[i][2]+'</p>'};f(0)}
+tabs("#fc","#fp",[["Королевская битва","Сто игроков в одном матче, постепенно сужающаяся карта и победитель только один.","Режим вышел в сентябре 2017 года и быстро стал главным в игре."],["Без построек","Версия без строительства: всё решается стрельбой и позицией.","Режим Zero Build появился в 2022 году и привлек тех, кто не любит строить."],["Творческий режим","Игроки строят свои острова и игры внутри Fortnite.","Редактор UEFN, похожий на Unreal Editor, появился в 2023 году."],["LEGO Fortnite","Отдельный режим выживания и строительства в мире LEGO.","Вышел в декабре 2023 года."],["События и концерты","Временные события и музыкальные шоу прямо в игре.","Среди первых были концерты в 2019 и 2020 годах, на которые собирались миллионы людей."]]);
+tabs("#uc","#up",[["Игры","На Unreal Engine делают большие проекты: от самого Fortnite до игр других студий.","Движок подходит и для небольших независимых команд."],["Кино и ТВ","Виртуальное производство: актёры снимаются на фоне гигантских экранов с графикой в реальном времени.","Такую технологию используют в сериалах и фильмах."],["Авто","Производители строят в движке конфигураторы и демонстрации машин.","Реалистичный свет и материалы помогают показать автомобиль до того, как его собрали."],["Архитектура","Архитекторы показывают здания клиентам в виде прогулки по 3D-сцене.","Можно войти в проект до того, как началось строительство."]]);
+tabs("#lc","#lp",[["Apple","В 2020 году Epic добавила в Fortnite прямую оплату, и Apple убрала игру из App Store.","Компания подала иск против комиссии в 30%. Суд вынес решение в 2021 году, и обе стороны восприняли его по-разному."],["Google","Спор про магазин Google Play пошёл в том же году.","В декабре 2023 года присяжные признали правоту Epic."],["Что изменилось","Споры заставили многих пересмотреть правила приложений и комиссии.","Детали лучше сверить с актуальными новостями, потому что дела тянулись годами."]]);
+if(!matchMedia("(prefers-reduced-motion:reduce)").matches){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io.unobserve(e.target);var n=+e.target.dataset.n,t0=null;(function f(t){t0=t0||t;var k=Math.min(1,(t-t0)/1200);e.target.textContent=Math.round(n*k);if(k<1)requestAnimationFrame(f)})(performance.now())})});
+[].forEach.call(document.querySelectorAll("[data-n]"),function(el){io.observe(el)})}
+tabs("#swc","#swp",[["Огромный каталог","В Steam больше 60 000 игр: от больших проектов до маленьких инди.","Низкий порог входа для авторов приводит новые игры почти каждый день."],["Отзывы и рейтинги","У каждой игры есть отзывы игроков и процент положительных оценок.","Это помогает выбрать игру до покупки."],["Сообщество","Форумы, гайды, достижения, коллекционные карточки и профили.","Друзья, чаты и группы удерживают людей внутри платформы."],["Скидки и желаемое","Крупные сезонные распродажи и уведомления, когда игра из списка желаний дешевеет.","Игроки заранее ждут распродаж и планируют покупки."],["Мастерская и моды","Steam Workshop позволяет ставить моды в один клик.","Моды продлевают жизнь играм на годы."],["Игры Valve","Dota 2, CS2 и другие хиты Valve запускаются через Steam.","Они приводят миллионы игроков, которые остаются в клиенте."],["Steam Deck","Портативная консоль 2022 года запускает библиотеку Steam.","Многие игры работают благодаря SteamOS и Proton."]]);
+tabs("#shc","#shp",[["2003 · Запуск","Valve запускает Steam как клиент для обновлений игр, сначала для Counter-Strike.","В 2004 году Half-Life 2 потребовала Steam для запуска, и клиент стал массовым."],["2005 · Чужие игры","В Steam появляются игры сторонних студий.","Valve превращает клиент в полноценный магазин."],["2011 · Мастерская","Запуск Steam Workshop для модов и пользовательского контента.","Моды ставятся в один клик."],["2013 · Ранний доступ","Early Access позволяет продавать игры до релиза.","Инди-студии получают деньги и отзывы раньше."],["2017 · Steam Direct","Steam Direct заменил Greenlight: авторы платят взнос $100 за игру.","Каталог начал расти ещё быстрее."],["2018 · Proton","Proton позволяет запускать Windows-игры на Linux.","Это важный шаг на пути к Steam Deck."],["2022 · Steam Deck","Valve выпускает портативную консоль Steam Deck.","В 2023 году вышла версия с OLED-экраном."]]);
+tabs("#sfc","#sfp",[["Магазин и библиотека","Покупка, установка и запуск игр из одного окна.","Есть список желаний, подборки и рекомендации."],["Сообщество","Профили, друзья, чаты, группы и форумы игр.","Игроки пишут обзоры и делятся скриншотами."],["Мастерская","Моды, карты и скины, которые ставятся в один клик.","Авторы могут публиковать свои работы."],["Облако и Remote Play","Сохранения хранятся в облаке и доступны на других устройствах.","Remote Play Together позволяет играть с друзьями на одном экране по сети."],["Steam Deck и SteamOS","Портативная консоль и операционная система Valve.","Proton запускает многие Windows-игры на Linux."],["Для разработчиков","Набор инструментов Steamworks: достижения, облако, онлайн-сервисы.","Публикация через Steam Direct с взносом $100 за игру."]]);
+function sdc(){var p=+$("#sdp").value,d=+$("#sdd").value;$("#sdl").textContent="$"+p;$("#sdl2").textContent=d+"%";$("#sdr").textContent="Вы заплатите $"+(p*(100-d)/100).toFixed(2)+" и сэкономите $"+(p*d/100).toFixed(2)+"."}
+$("#sdp").oninput=sdc;$("#sdd").oninput=sdc;sdc();
+function efc(){var p=+$("#efp").value,n=+$("#efn").value;$("#efl").textContent="$"+p;$("#efl2").textContent=n;$("#efr").textContent="За год это "+n*12+" игр на сумму около $"+(n*12*p)+". Игры остаются в аккаунте, если забрать их во время раздачи."}
+$("#efp").oninput=efc;$("#efn").oninput=efc;efc();
+var Q=[["Что для вас важнее всего?",["Огромный выбор игр",2,0],["Бесплатные игры",0,2],["Низкие цены на скидках",1,1]],
+["Во что вы играете?",["Dota 2, CS2",2,0],["Fortnite, Rocket League",0,2],["Во всё подряд",1,1]],
+["Как вы выбираете игру?",["Читаю отзывы игроков",2,0],["Беру то, что раздают",0,2],["Советуют друзья",1,1]],
+["Нужны ли вам моды?",["Да, ставлю моды",2,0],["Нет, играю как есть",0,1]],
+["На чём вы играете?",["Steam Deck или Linux",2,0],["Обычный ПК на Windows",1,1]],
+["Как вы относитесь к расходам?",["Покупаю по скидкам",1,1],["Хочу тратить минимум",0,2]],
+["Любите достижения и коллекции?",["Да, собираю значки и достижения",2,0],["Не особенно",0,1]],
+["Вы разработчик?",["Нет",0,0],["Да, важна высокая доля выручки",0,2],["Да, нужна большая аудитория",2,0]]];
+var qa=[];function showQ(){$("#qz").innerHTML=Q.map(function(q,i){return '<p>'+(i+1)+'. '+q[0]+'</p><div class="chips">'+q.slice(1).map(function(o,j){return '<button type="button" class="chip'+(qa[i]===j?' on':'')+'" data-q="'+i+'" data-o="'+j+'">'+o[0]+'</button>'}).join('')+'</div>'}).join('')+'<p><button type="button" class="chip" id="qx">Сбросить</button></p>';
+[].forEach.call($("#qz").querySelectorAll("[data-q]"),function(b){b.onclick=function(){qa[+b.dataset.q]=+b.dataset.o;showQ()}});$("#qx").onclick=function(){qa=[];showQ()};
+var n=Q.filter(function(q,i){return qa[i]!==undefined}).length,r=$("#qr"),bar=$("#qb");
+if(n<Q.length){bar.innerHTML="";r.textContent="Отвечено "+n+" из "+Q.length+".";return}
+var s=0,e=0;qa.forEach(function(a,i){s+=Q[i][a+1][1];e+=Q[i][a+1][2]});var sp=s+e?Math.round(s/(s+e)*100):50;
+bar.innerHTML='<div class="mt"><div class="s" style="width:'+sp+'%">Steam '+sp+'%</div><div class="e" style="width:'+(100-sp)+'%">Epic '+(100-sp)+'%</div></div>';
+r.textContent=sp>=60?"Вам больше подходит Steam: большой выбор, отзывы и сообщество.":sp<=40?"Вам больше подходит Epic: бесплатные игры и выгодные условия.":"Вам стоит пользоваться обеими площадками."}showQ();
+$("#th").onclick=function(){var d=document.documentElement,dark=getComputedStyle(d).getPropertyValue("--bg").trim()=="#0b0c14";d.setAttribute("data-theme",dark?"light":"dark")};
+var L=[].slice.call(document.querySelectorAll("aside a.n")),T=L.map(function(a){return document.querySelector(a.getAttribute("href"))});
+function u(){var y=window.scrollY+120,i=0;T.forEach(function(e,k){if(e.offsetTop<=y)i=k});L.forEach(function(a,k){a.classList.toggle("on",k===i)})}
+window.addEventListener("scroll",u,{passive:true});u();
+</script>
+</body>
+</html>
